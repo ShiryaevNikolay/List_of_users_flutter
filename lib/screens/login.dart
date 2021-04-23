@@ -11,8 +11,12 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   bool _isShowKeyboard = false;
+  String _email = "";
+  String _password = "";
 
   KeyboardListener _keyboardListener = KeyboardListener();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
 
   @override
   void initState() {
@@ -23,11 +27,21 @@ class _LoginScreenState extends State<LoginScreen> {
         _isShowKeyboard = isVisible;
       });
     });
+
+    _emailController.addListener(() {
+      _email = _emailController.value.text;
+    });
+
+    _passwordController.addListener(() {
+      _password = _passwordController.value.text;
+    });
   }
 
   @override
   void dispose() {
     _keyboardListener.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
     super.dispose();
   }
 
@@ -35,10 +49,8 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        systemNavigationBarColor: Theme.of(context).scaffoldBackgroundColor,
-        systemNavigationBarIconBrightness: Brightness.dark
-      ),
+          statusBarColor: Colors.transparent,
+          systemNavigationBarColor: Theme.of(context).scaffoldBackgroundColor),
       child: Scaffold(
           body: Stack(
         fit: StackFit.expand,
@@ -76,12 +88,13 @@ class _LoginScreenState extends State<LoginScreen> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16)),
                         child: Padding(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 50, vertical: 60),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 60),
                           child: Column(
                             children: [
                               CustomTextField(
                                 label: "Email",
+                                controller: _emailController,
                               ),
                               const SizedBox(
                                 height: 30,
@@ -89,6 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               CustomTextField(
                                 label: "Пароль",
                                 passwordType: true,
+                                controller: _passwordController,
                               ),
                               const SizedBox(height: 55),
                               CustomButton(
