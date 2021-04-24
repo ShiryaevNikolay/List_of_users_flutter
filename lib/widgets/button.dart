@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  CustomButton({this.child, this.onPressed});
+  CustomButton({this.child, this.width, this.onPressed});
 
   final child;
+  final width;
   void Function()? onPressed;
 
   @override
@@ -12,7 +13,7 @@ class CustomButton extends StatelessWidget {
       focusElevation: 0,
       hoverElevation: 0,
       highlightElevation: 0,
-      minWidth: double.infinity,
+      minWidth: width != null ? width : double.infinity,
       color: Theme.of(context).primaryColor,
       disabledColor: Theme.of(context).primaryColorLight,
       textColor: Colors.white,

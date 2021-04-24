@@ -1,5 +1,8 @@
 abstract class BaseState {}
 
+// Состояние инициализации
+class InitialState extends BaseState {}
+
 // Состояние загрузки пользотелей
 class LoadingState extends BaseState {}
 
