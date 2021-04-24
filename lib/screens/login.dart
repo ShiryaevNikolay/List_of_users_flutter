@@ -51,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void _onClickButton() {
-    // TODO: реализовать функцию нажатия на кнопку авторизации
+    Navigator.pushNamed(context, '/users');
   }
 
   @override
@@ -118,7 +118,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               const SizedBox(height: 55),
                               CustomButton(
                                 child: Text("Войти"),
-                                onPressed: _isBtnEnabled ? _onClickButton : null,
+                                onPressed:
+                                    _isBtnEnabled ? _onClickButton : null,
                               )
                             ],
                           ),

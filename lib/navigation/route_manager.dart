@@ -8,7 +8,7 @@ import 'package:users_list_flutter/screens/users_list.dart';
 class RouteManager {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     // Переменная хранит аргументы, которые мы передаем между экранами
-    final args = settings.arguments;
+    // final args = settings.arguments;
 
     switch (settings.name) {
       // Главный экран
@@ -19,10 +19,11 @@ class RouteManager {
 
       // Экран со списком пользователей
       case '/users':
-        if (args is Map) {
-          return getRouteFor(UsersList());
-        }
-        return _underConstuctionRoute();
+        // Условие, если мы передаем аргументы
+        // if (args is Map) {
+        //   return getRouteFor(UsersList());
+        // }
+        return getRouteFor(UsersList());
 
       // Если не найден путь, то возвращаем экран с предупреждением
       default:

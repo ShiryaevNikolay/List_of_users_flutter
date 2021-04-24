@@ -9,6 +9,10 @@ class UsersList extends StatelessWidget {
           statusBarIconBrightness: Brightness.dark,
           systemNavigationBarColor: Theme.of(context).scaffoldBackgroundColor,
           systemNavigationBarIconBrightness: Brightness.dark),
-    child: Scaffold(),
+    child: Scaffold(
+      body: Center(
+        child: Text("USERS"),
+      ),
+    ),
   );
 }
