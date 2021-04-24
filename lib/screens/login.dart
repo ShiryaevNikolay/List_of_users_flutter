@@ -14,6 +14,8 @@ class _LoginScreenState extends State<LoginScreen> {
   String _email = "";
   String _password = "";
 
+  bool _isBtnEnabled = false;
+
   KeyboardListener _keyboardListener = KeyboardListener();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
@@ -34,6 +36,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
     _passwordController.addListener(() {
       _password = _passwordController.value.text;
+      setState(() {
+        _isBtnEnabled = _password.isNotEmpty;
+      });
     });
   }
 
@@ -45,12 +50,18 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
+  void _onClickButton() {
+    // TODO: реализовать функцию нажатия на кнопку авторизации
+  }
+
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
-          systemNavigationBarColor: Theme.of(context).scaffoldBackgroundColor),
+          statusBarIconBrightness: Brightness.dark,
+          systemNavigationBarColor: Theme.of(context).scaffoldBackgroundColor,
+          systemNavigationBarIconBrightness: Brightness.dark),
       child: Scaffold(
           body: Stack(
         fit: StackFit.expand,
@@ -107,6 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               const SizedBox(height: 55),
                               CustomButton(
                                 child: Text("Войти"),
+                                onPressed: _isBtnEnabled ? _onClickButton : null,
                               )
                             ],
                           ),
