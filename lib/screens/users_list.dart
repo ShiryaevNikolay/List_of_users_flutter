@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:users_list_flutter/bloc/bloc_event.dart';
 import 'package:users_list_flutter/bloc/bloc_state.dart';
 import 'package:users_list_flutter/bloc/main_bloc.dart';
+import 'package:users_list_flutter/screens/show_user.dart';
 import 'package:users_list_flutter/widgets/button.dart';
 import 'package:users_list_flutter/widgets/user_card.dart';
 
@@ -66,11 +67,5 @@ class UsersList extends StatelessWidget {
         ),
       );
 
-  Widget _buildListUsers(ShowUsersState state) => ListView.separated(
-        separatorBuilder: (context, index) => Divider(),
-        itemCount: state.users.length,
-        itemBuilder: (context, index) => UserCard(
-          user: state.users[index]
-        ),
-      );
+  Widget _buildListUsers(ShowUsersState state) => ShowUserList(state: state,);
 }
