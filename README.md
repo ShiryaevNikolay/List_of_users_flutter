@@ -1,16 +1,8 @@
-# users_list_flutter
+# Список пользователей
 
-A new Flutter project.
+При входе в приложение пользователь попадает на экран авторизации. Кнопка авторизации "Войти" активна, когда поле ввода пароля не пустое. После авторизации пользователь попадает на главный экран, на котором выводится список пользователей, загружаемый из сети.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Данное приложение основано на архитектуре BloC и имеет 3 состояния экрана:
+* Состояние загрузки
+* Состояние ошибки
+* Состояние, при котором показывается список пользователей
