@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:users_list_flutter/screens/login.dart';
-import 'package:users_list_flutter/screens/users_list.dart';
+import 'package:users_list_flutter/screens/login_screen.dart';
+import 'package:users_list_flutter/screens/users_screen.dart';
 
 class RouteManager {
   static Route<dynamic> generateRoute(RouteSettings settings) {
