@@ -6,3 +6,7 @@
 * Состояние загрузки
 * Состояние ошибки
 * Состояние, при котором показывается список пользователей
+
+<img src="https://github.com/ShiryaevNikolay/List_of_users_flutter/blob/main/assets/screenshots/1.jpg" width="250> <img src="https://github.com/ShiryaevNikolay/List_of_users_flutter/blob/main/assets/screenshots/2.jpg" width="250> <img src="https://github.com/ShiryaevNikolay/List_of_users_flutter/blob/main/assets/screenshots/3.jpg" width="250> <img src="https://github.com/ShiryaevNikolay/List_of_users_flutter/blob/main/assets/screenshots/4.jpg" width="250> 
+
+<img src="https://github.com/ShiryaevNikolay/List_of_users_flutter/blob/main/assets/screenshots/5.jpg" width="250> <img src="https://github.com/ShiryaevNikolay/List_of_users_flutter/blob/main/assets/screenshots/6.jpg" width="250> <img src="https://github.com/ShiryaevNikolay/List_of_users_flutter/blob/main/assets/screenshots/7.jpg" width="250>
